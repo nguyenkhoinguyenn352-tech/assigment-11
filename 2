@@ -1,0 +1,38 @@
+class Car:
+    def __init__(self, reg, max_speed):
+        self.reg = reg
+        self.max_speed = max_speed
+        self.speed = 0
+        self.km = 0
+
+    def set_speed(self, speed):
+        self.speed = speed
+
+    def drive(self, hours):
+        self.km += self.speed * hours
+
+
+class ElectricCar(Car):
+    def __init__(self, reg, max_speed, battery):
+        super().__init__(reg, max_speed)
+        self.battery = battery
+
+
+class GasolineCar(Car):
+    def __init__(self, reg, max_speed, tank):
+        super().__init__(reg, max_speed)
+        self.tank = tank
+
+
+# main
+e = ElectricCar("ABC-15", 180, 52.5)
+g = GasolineCar("ACD-123", 165, 32.3)
+
+e.set_speed(100)
+g.set_speed(90)
+
+e.drive(3)
+g.drive(3)
+
+print(e.reg, "kilometers:", e.km)
+print(g.reg, "kilometers:", g.km)
