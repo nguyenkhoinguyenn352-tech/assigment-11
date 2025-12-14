@@ -1,0 +1,37 @@
+class Publication:
+    def __init__(self, name):
+        self.name = name
+
+    def print_information(self):
+        print("Name:", self.name)
+
+
+class Book(Publication):
+    def __init__(self, name, author, pages):
+        self.name = name
+        self.author = author
+        self.pages = pages
+
+    def print_information(self):
+        print("Book:", self.name)
+        print("Author:", self.author)
+        print("Pages:", self.pages)
+
+
+class Magazine(Publication):
+    def __init__(self, name, editor):
+        self.name = name
+        self.editor = editor
+
+    def print_information(self):
+        print("Magazine:", self.name)
+        print("Chief editor:", self.editor)
+
+
+# main
+m = Magazine("Donald Duck", "Aki Hyppä")
+b = Book("Compartment No. 6", "Rosa Liksom", 192)
+
+m.print_information()
+print()
+b.print_information()
